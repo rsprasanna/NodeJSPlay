@@ -15,7 +15,7 @@ mongoose.connection.on('connected', () => {
 app.use(bodyParser.json()); 
   
 // Importing routes 
-const user = require('./route/user'); 
+const user = require('./routes/user'); 
   
 // Use user route when url matches /api/user/ 
 app.use('/api/user', user); 
