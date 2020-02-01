@@ -1,8 +1,8 @@
 // Import modules
 const express = require('express');
 const router = express.Router();
-// IMporting User schema
-const User = require('../model/user');
+// Importing User schema
+const User = require('../models/user');
 
 // User Login Api
     router.post('/login',(req, res)=>{
