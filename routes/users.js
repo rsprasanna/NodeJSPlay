@@ -55,3 +55,5 @@ router.post('/singup', (req, res, next) =>{
 }); 
 
 });
+// Export module to allow it to be imported in other files 
+module.exports = router; 
