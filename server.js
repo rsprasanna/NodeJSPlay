@@ -1,7 +1,7 @@
 // Import modules.
 var express = require('express');
 var mongoose = require('mongoose');
-var bodyParser = require('body-parser');
+//var bodyParser = require('body-parser');
 //Initialize express
 var app = new express();
 const uri = process.env.DATABASE_URI;   //--- For heroku mLab MongoDB connection
@@ -12,7 +12,7 @@ mongoose.connection.on('connected', () => {
 }); 
   
 // Using bodyparser to parse json data 
-app.use(bodyParser.json()); 
+//app.use(bodyParser.json()); 
   
 // Importing routes 
 const userRouter = require('./routes/users'); 

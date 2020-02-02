@@ -38,9 +38,9 @@ router.post('/singup', (req, res) =>{
     let newUser = new User(); 
   
     // Initialize newUser object with request data 
-    newUser.name = req.body.name, 
+    newUser.name = req.body.name;
   
-    newUser.email = req.body.email 
+    newUser.email = req.body.email;
   
                     // Call setPassword function to hash password 
                     newUser.setPasswordHash(req.body.userPassword); 
