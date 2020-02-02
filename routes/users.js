@@ -34,15 +34,20 @@ const User = require('../models/user');
 
 // User Sign in
 router.post('/singup', (req, res) =>{
-    let newUser = new User();
-    newUser.name = req.body.name,
-    newUser.email = req.body.email, 
-    // set hash password 
-    newUser.setPasswordHash(req.body.userpassword);
+    // Creating empty user object 
+    let newUser = new User(); 
+  
+    // Initialize newUser object with request data 
+    newUser.name = req.body.name, 
+  
+    newUser.email = req.body.email 
+  
+                    // Call setPassword function to hash password 
+                    newUser.setPassword(req.body.userPassword); 
     // Save new user to db.
     newUser.save((err,User) =>{
     if(err)
-    {
+    { 
         res.status(400).send({
             message : "Failed to add user"
         });
