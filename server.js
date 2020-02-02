@@ -15,10 +15,10 @@ mongoose.connection.on('connected', () => {
 app.use(bodyParser.json()); 
   
 // Importing routes 
-const user = require('./routes/users'); 
+const userRouter = require('./routes/users'); 
   
 // Use user route when url matches /api/user/ 
-app.use('/api/user', user); 
+app.use('/api/user', userRouter); 
   
 // Creating server 
 const port = 3000; 
