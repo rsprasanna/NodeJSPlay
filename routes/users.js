@@ -7,7 +7,7 @@ const User = require('../models/user');
 // User Login Api
     router.post('/login',(req, res)=>{
     // find user with requested email
-    User.findOne({email :req.body.email}, function(err, user){
+    User.findOne({email : req.body.email }, function(err, user){
         if(user == null)
         {
             return res.status(400).send({
