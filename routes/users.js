@@ -37,8 +37,10 @@ router.post('/singup', (req, res, next) =>{
     let newUser = new User();
     newUser.name = req.body.name;
     newUser.email = req.body.email;
-    console.log(req.body.userpassword);
-    // set hash password
+    console.log(req.body);
+    console.log('email' + req.body.email);
+    console.log('userpassword' +req.body.userpassword);
+    // set hash password 
     newUser.setPasswordHash(req.body.userpassword);
     // Save new user to db.
     newUser.save((err,User) =>{
