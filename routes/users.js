@@ -33,13 +33,10 @@ const User = require('../models/user');
 });
 
 // User Sign in
-router.post('/singup', (req, res, next) =>{
+router.post('/singup', (req, res) =>{
     let newUser = new User();
-    newUser.name = req.body.name;
-    newUser.email = req.body.email;
-    console.log(req.body);
-    console.log('email' + req.body.email);
-    console.log('userpassword' +req.body.userpassword);
+    newUser.name = req.body.name,
+    newUser.email = req.body.email, 
     // set hash password 
     newUser.setPasswordHash(req.body.userpassword);
     // Save new user to db.
