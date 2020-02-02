@@ -36,7 +36,7 @@ const User = require('../models/user');
 router.post('/singup', (req, res) =>{
     // Creating empty user object 
     let newUser = new User(); 
-  
+  console.log("name" +req.body.name)
     // Initialize newUser object with request data 
     newUser.name = req.body.name;
   
