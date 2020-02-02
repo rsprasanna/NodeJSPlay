@@ -16,7 +16,9 @@ const User = require('../models/user');
         }
         else
         {
-            if(user.validatePassword(req.body.userpassword))
+            var validUser = user.validatePassword(req.body.userpassword);
+            console.log('validUser ' + validUser);
+            if(validUser)
             {
                 return res.status(200).send({
                     message: "User logged in."
