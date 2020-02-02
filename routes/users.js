@@ -16,7 +16,7 @@ const User = require('../models/user');
         }
         else
         {
-            if(user.validatePassword(req.body.password))
+            if(user.validatePassword(req.body.userpassword))
             {
                 return res.status(200).send({
                     message: "User logged in."
@@ -37,9 +37,9 @@ router.post('/singup', (req, res, next) =>{
     let newUser = new User();
     newUser.name = req.body.name;
     newUser.email = req.body.email;
-    console.log(req.body.password);
+    console.log(req.body.userpassword);
     // set hash password
-    newUser.setPasswordHash(req.body.password);
+    newUser.setPasswordHash(req.body.userpassword);
     // Save new user to db.
     newUser.save((err,User) =>{
     if(err)
