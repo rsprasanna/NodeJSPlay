@@ -13,6 +13,7 @@ mongoose.connection.on('connected', () => {
   
 // Using bodyparser to parse json data 
 app.use(bodyParser.json()); 
+app.use(bodyParser.urlencoded({ extended: true })); 
   
 // Importing routes 
 const userRouter = require('./routes/users'); 
