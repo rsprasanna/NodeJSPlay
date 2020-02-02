@@ -37,6 +37,7 @@ router.post('/singup', (req, res, next) =>{
     let newUser = new User();
     newUser.name = req.body.name;
     newUser.email = req.body.email;
+    console.log(req.body.password);
     // set hash password
     newUser.setPasswordHash(req.body.password);
     // Save new user to db.
@@ -48,7 +49,7 @@ router.post('/singup', (req, res, next) =>{
         });
     }
     else {
-        res.status(201).send({
+        res.status(201).send({ 
             message : "User added successfully"
         })
     }
